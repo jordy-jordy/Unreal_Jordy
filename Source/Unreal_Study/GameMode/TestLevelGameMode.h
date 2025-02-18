@@ -13,5 +13,13 @@ UCLASS()
 class UNREAL_STUDY_API ATestLevelGameMode : public AGameMode
 {
 	GENERATED_BODY()
+
+protected:
+	void BeginPlay();
+	void Tick(float _DeltaTime);
+
+private:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Monster", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class ATestActor_Monster> Spawn_Moster = 0;
 	
 };
